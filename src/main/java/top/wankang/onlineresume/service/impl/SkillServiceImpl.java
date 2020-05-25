@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.wankang.onlineresume.dao.SkillMapper;
+import top.wankang.onlineresume.entity.ProjectExperience;
+import top.wankang.onlineresume.entity.ProjectExperienceExample;
 import top.wankang.onlineresume.entity.Skill;
 import top.wankang.onlineresume.entity.SkillExample;
 import top.wankang.onlineresume.service.SkillService;
@@ -36,6 +38,15 @@ public class SkillServiceImpl implements SkillService {
     @Override
     public Skill query(Integer id) {
         return skillMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Skill> queryByUserId(Integer UserId) {
+        SkillExample example = new SkillExample();
+        SkillExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(UserId);
+        List<Skill> skills = skillMapper.selectByExample(example);
+        return skills;
     }
 
 }

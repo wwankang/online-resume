@@ -1,6 +1,7 @@
 package top.wankang.onlineresume.service;
 
 
+import top.wankang.onlineresume.entity.ProjectExperience;
 import top.wankang.onlineresume.entity.SelfAppraisal;
 
 import java.util.List;
@@ -31,5 +32,5 @@ public interface SelfAppraisalService {
     SelfAppraisal query(Integer id);
 
 
-
+    SelfAppraisal queryByUserId(Integer id);
 }

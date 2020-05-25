@@ -30,6 +30,11 @@ public interface ProjectExperienceService {
      */
     ProjectExperience query(Integer id);
 
-
+    /**
+     * 查询
+     * @param
+     * @return
+     */
+    List<ProjectExperience> queryByUserId(Integer UserId);
 
 }

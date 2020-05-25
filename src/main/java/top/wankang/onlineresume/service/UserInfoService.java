@@ -22,6 +22,8 @@ public interface UserInfoService {
      */
     List<UserInfo> queryList(Integer page, Integer limit);
 
+    UserInfo getUserInfoByName(String name);
+
 
 
 }

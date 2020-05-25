@@ -33,4 +33,16 @@ public class UserInfoServiceImpl implements UserInfoService {
         return userInfoMapper.selectByExample(example);
     }
 
+    @Override
+    public UserInfo getUserInfoByName(String name) {
+        UserInfoExample example = new UserInfoExample();
+        UserInfoExample.Criteria criteria = example.createCriteria();
+        criteria.andNameEqualTo(name);
+        List<UserInfo> userInfos = userInfoMapper.selectByExample(example);
+        if (!userInfos.isEmpty()){
+            return userInfos.get(0);
+        }
+        return null;
+    }
+
 }

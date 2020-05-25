@@ -29,23 +29,19 @@ public class ResumeController {
     private WorkExperienceService workService;
     @Autowired
     private SelfAppraisalService appraisalService;
+    @Autowired
+    private ResumeService resumeService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String resumeIndex(HttpServletRequest request, Model model) {
-        List<UserInfo> userInfos = userInfoService.queryList(1, 1);
-        List<ProjectExperience> projectDOList = projectService.queryList(1, 10);
-        List<Skill> skillDOList = skillService.queryList(1, 10);
-        List<WorkExperience> workDOList = workService.queryList(1, 10);
-        List<SelfAppraisal> appraisalDOList = appraisalService.queryList(1, 10);
-        if (userInfos.size() > 0) {
-            model.addAttribute("userinfo", userInfos.get(0));
-        }
-        model.addAttribute("projectList", projectDOList);
-        model.addAttribute("skillList", skillDOList);
-        model.addAttribute("workList", workDOList);
-        model.addAttribute("appraisalList", appraisalDOList);
-        request.setAttribute("name","wankang");
-        System.out.println("打开简历首页！");
+
+        ResumeInfo resumeInfo = resumeService.getResumeInfoByName("万康");
+
+        model.addAttribute("userinfo", resumeInfo.getUserInfo());
+        model.addAttribute("projectList", resumeInfo.getProjectExperiences());
+        model.addAttribute("skillList", resumeInfo.getSkills());
+        model.addAttribute("workList", resumeInfo.getWorkExperiences());
+        model.addAttribute("appraisalList", resumeInfo.getSelfAppraisal());
         return "resume/index";
     }
 }

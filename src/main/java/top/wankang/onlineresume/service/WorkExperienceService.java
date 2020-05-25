@@ -1,6 +1,7 @@
 package top.wankang.onlineresume.service;
 
 
+import top.wankang.onlineresume.entity.ProjectExperience;
 import top.wankang.onlineresume.entity.WorkExperience;
 
 import java.util.List;
@@ -31,6 +32,5 @@ public interface WorkExperienceService {
     WorkExperience query(Integer id);
 
 
-
-
+    List<WorkExperience> queryByUserId(Integer id);
 }

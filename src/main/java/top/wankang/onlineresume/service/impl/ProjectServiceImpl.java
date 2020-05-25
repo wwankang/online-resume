@@ -36,4 +36,13 @@ public class ProjectServiceImpl implements ProjectExperienceService {
     public ProjectExperience query(Integer id) {
         return projectExperienceMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public List<ProjectExperience> queryByUserId(Integer UserId) {
+        ProjectExperienceExample example = new ProjectExperienceExample();
+        ProjectExperienceExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(UserId);
+        List<ProjectExperience> projectExperiences = projectExperienceMapper.selectByExample(example);
+        return projectExperiences;
+    }
 }
