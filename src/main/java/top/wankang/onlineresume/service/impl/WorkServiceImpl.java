@@ -5,10 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.wankang.onlineresume.dao.WorkMapper;
-import top.wankang.onlineresume.entity.Work;
-import top.wankang.onlineresume.entity.WorkExample;
-import top.wankang.onlineresume.service.WorkService;
+import top.wankang.onlineresume.dao.WorkExperienceMapper;
+import top.wankang.onlineresume.entity.WorkExperience;
+import top.wankang.onlineresume.entity.WorkExperienceExample;
+import top.wankang.onlineresume.service.WorkExperienceService;
 
 import java.util.List;
 
@@ -20,22 +20,22 @@ import java.util.List;
  * @Desc:
  */
 @Service
-public class WorkServiceImpl implements WorkService {
+public class WorkServiceImpl implements WorkExperienceService {
 //    private static final Logger logger = LoggerFactory.getLogger(com.hongshen.boke.jianli.service.impl.WorkServiceImpl.class);
 
     @Autowired
-    private WorkMapper workMapper;
+    private WorkExperienceMapper workExperienceMapper;
 
     @Override
-    public List<Work> queryList(Integer page, Integer limit) {
+    public List<WorkExperience> queryList(Integer page, Integer limit) {
         PageHelper.startPage(page,limit);
-        WorkExample example = new WorkExample();
-        return workMapper.selectByExample(example);
+        WorkExperienceExample example = new WorkExperienceExample();
+        return workExperienceMapper.selectByExample(example);
     }
 
     @Override
-    public Work query(Integer id) {
-        return workMapper.selectByPrimaryKey(id);
+    public WorkExperience query(Integer id) {
+        return workExperienceMapper.selectByPrimaryKey(id);
     }
 
 }

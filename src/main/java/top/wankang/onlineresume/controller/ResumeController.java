@@ -22,21 +22,21 @@ public class ResumeController {
     @Autowired
     private UserInfoService userInfoService;
     @Autowired
-    private ProjectService projectService;
+    private ProjectExperienceService projectService;
     @Autowired
     private SkillService skillService;
     @Autowired
-    private WorkService workService;
+    private WorkExperienceService workService;
     @Autowired
-    private AppraisalService appraisalService;
+    private SelfAppraisalService appraisalService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String resumeIndex(HttpServletRequest request, Model model) {
         List<UserInfo> userInfos = userInfoService.queryList(1, 1);
-        List<Project> projectDOList = projectService.queryList(1, 10);
+        List<ProjectExperience> projectDOList = projectService.queryList(1, 10);
         List<Skill> skillDOList = skillService.queryList(1, 10);
-        List<Work> workDOList = workService.queryList(1, 10);
-        List<Appraisal> appraisalDOList = appraisalService.queryList(1, 10);
+        List<WorkExperience> workDOList = workService.queryList(1, 10);
+        List<SelfAppraisal> appraisalDOList = appraisalService.queryList(1, 10);
         if (userInfos.size() > 0) {
             model.addAttribute("userinfo", userInfos.get(0));
         }

@@ -104,7 +104,7 @@
             </div>
             <div class="col-md-3 col-sm-6 service"><i class="fa fa-code"></i>
                 <h4><strong>专业学历</strong></h4>
-                <p th:utext="${'专业：'+userinfo.specialty+'</br>'+'学历：'+userinfo.education}"></p>
+                <p th:utext="${'专业：'+userinfo.major+'</br>'+'学历：'+userinfo.education}"></p>
             </div>
             <div class="col-md-3 col-sm-6 service"><i class="fa fa-rocket"></i>
                 <h4><strong>毕业学校</strong></h4>
@@ -112,7 +112,7 @@
             </div>
             <div class="col-md-3 col-sm-6 service"><i class="fa fa-bullseye"></i>
                 <h4><strong>联系方式</strong></h4>
-                <p th:utext="${'电话：'+userinfo.linkPhone+'</br>邮箱：'+userinfo.linkEmail}"></p>
+                <p th:utext="${'电话：'+userinfo.linkPhone+'</br>邮箱：'+userinfo.email}"></p>
             </div>
         </div>
     </div>
@@ -274,7 +274,7 @@
                 <p th:text="${userinfo.linkAddress}"></p>
             </div>
             <div class="col-md-4"><i class="fa fa-envelope-o fa-2x"></i>
-                <p th:text="${userinfo.linkEmail}"></p>
+                <p th:text="${userinfo.email}"></p>
             </div>
             <div class="col-md-4"><i class="fa fa-phone fa-2x"></i>
                 <p th:text="${userinfo.linkPhone}"></p>

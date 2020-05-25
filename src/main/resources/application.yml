@@ -12,52 +12,52 @@ spring:
     mode: HTM5
     cache: false
     #mybatis.type-aliases-package=net.xdclass.base_project.domain
-    #¿ÉÒÔ×Ô¶¯Ê¶±ğ
+    #ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ê¶ï¿½ï¿½
     #spring.datasource.driver-class-name =com.mysql.jdbc.Driver
 
   datasource:
-    url: jdbc:mysql://115.28.130.238:3306/my_jianli?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://115.28.130.238:3306/resume?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
 
 #  datasource:
 #    name: mybatis_test
-    #Ê¹ÓÃdruidÁ¬½Ó³Ø
+    #Ê¹ï¿½ï¿½druidï¿½ï¿½ï¿½Ó³ï¿½
 #    type: com.alibaba.druid.pool.DruidDataSource
-    #druidÏà¹ØÅäÖÃ
+    #druidï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #    druid:
-#      #¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters
+#      #ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½filters
 #      filters: stat
 #      driver-class-name: com.mysql.jdbc.Driver
-#      #ÅäÖÃ»ù±¾ÊôĞÔ
+#      #ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #      url: jdbc:mysql://115.28.130.238:3306/my_jianli?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
 #      username: root
 #      password: root
-#      #ÅäÖÃ³õÊ¼»¯´óĞ¡/×îĞ¡/×î´ó
+#      #ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ğ¡/ï¿½ï¿½Ğ¡/ï¿½ï¿½ï¿½
 #      initial-size: 1
 #      min-idle: 1
 #      max-active: 20
-#      #»ñÈ¡Á¬½ÓµÈ´ı³¬Ê±Ê±¼ä
+#      #ï¿½ï¿½È¡ï¿½ï¿½ï¿½ÓµÈ´ï¿½ï¿½ï¿½Ê±Ê±ï¿½ï¿½
 #      max-wait: 60000
-#      #¼ä¸ô¶à¾Ã½øĞĞÒ»´Î¼ì²â£¬¼ì²âĞèÒª¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó
+#      #ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½Ò»ï¿½Î¼ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ÕµÄ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #      time-between-eviction-runs-millis: 60000
-#      #Ò»¸öÁ¬½ÓÔÚ³ØÖĞ×îĞ¡Éú´æµÄÊ±¼ä
+#      #Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 #      min-evictable-idle-time-millis: 300000
 #      validation-query: SELECT 'x'
 #      test-while-idle: true
 #      test-on-borrow: false
 #      test-on-return: false
-#      #´ò¿ªPSCache£¬²¢Ö¸¶¨Ã¿¸öÁ¬½ÓÉÏPSCacheµÄ´óĞ¡¡£oracleÉèÎªtrue£¬mysqlÉèÎªfalse¡£·Ö¿â·Ö±í½Ï¶àÍÆ¼öÉèÖÃÎªfalse
+#      #ï¿½ï¿½PSCacheï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PSCacheï¿½Ä´ï¿½Ğ¡ï¿½ï¿½oracleï¿½ï¿½Îªtrueï¿½ï¿½mysqlï¿½ï¿½Îªfalseï¿½ï¿½ï¿½Ö¿ï¿½Ö±ï¿½Ï¶ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªfalse
 #      pool-prepared-statements: false
 #      max-pool-prepared-statement-per-connection-size: 20
 #
 mybatis:
-  # Ó³ÉäÎÄ¼şËùÔÚÂ·¾¶
+  # Ó³ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
   mapper-locations: classpath:mapper/*.xml
-  # pojoÀàËùÔÚ°üÂ·¾¶
+  # pojoï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½Â·ï¿½ï¿½
   type-aliases-package: top.wankang.onlineresume.entity
   configuration:
-    #ÅäÖÃÏî£º¿ªÆôÏÂ»®Ïßµ½ÍÕ·åµÄ×Ô¶¯×ª»». ×÷ÓÃ£º½«Êı¾İ¿â×Ö¶Î¸ù¾İÍÕ·å¹æÔò×Ô¶¯×¢Èëµ½¶ÔÏóÊôĞÔ¡£
+    #ï¿½ï¿½ï¿½ï¿½ï¿½î£ºï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ßµï¿½ï¿½Õ·ï¿½ï¿½ï¿½Ô¶ï¿½×ªï¿½ï¿½. ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½Ö¶Î¸ï¿½ï¿½ï¿½ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½×¢ï¿½ëµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¡ï¿½
     map-underscore-to-camel-case: true
 
   #pagehelper
@@ -69,5 +69,5 @@ mybatis:
 
   logging:
     level:
-      #´òÓ¡SQLĞÅÏ¢
+      #ï¿½ï¿½Ó¡SQLï¿½ï¿½Ï¢
       com.along.dao: debug

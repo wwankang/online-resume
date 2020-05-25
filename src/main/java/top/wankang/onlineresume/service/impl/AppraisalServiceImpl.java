@@ -5,10 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.wankang.onlineresume.dao.AppraisalMapper;
-import top.wankang.onlineresume.entity.Appraisal;
-import top.wankang.onlineresume.entity.AppraisalExample;
-import top.wankang.onlineresume.service.AppraisalService;
+import top.wankang.onlineresume.dao.SelfAppraisalMapper;
+import top.wankang.onlineresume.entity.SelfAppraisal;
+import top.wankang.onlineresume.entity.SelfAppraisalExample;
+import top.wankang.onlineresume.service.SelfAppraisalService;
 
 import java.util.List;
 
@@ -20,22 +20,22 @@ import java.util.List;
  * @Desc:
  */
 @Service
-public class AppraisalServiceImpl implements AppraisalService {
+public class AppraisalServiceImpl implements SelfAppraisalService {
 //    private static final Logger logger = LoggerFactory.getLogger(com.hongshen.boke.jianli.service.impl.AppraisalServiceImpl.class);
 
     @Autowired
-    private AppraisalMapper appraisalMapper;
+    private SelfAppraisalMapper selfAppraisalMapper;
 
     @Override
-    public List<Appraisal> queryList(Integer page, Integer limit) {
+    public List<SelfAppraisal> queryList(Integer page, Integer limit) {
         PageHelper.startPage(page,limit);
-        AppraisalExample example = new AppraisalExample();
-        return appraisalMapper.selectByExample(example);
+        SelfAppraisalExample example = new SelfAppraisalExample();
+        return selfAppraisalMapper.selectByExample(example);
     }
 
     @Override
-    public Appraisal query(Integer id) {
-        return appraisalMapper.selectByPrimaryKey(id);
+    public SelfAppraisal query(Integer id) {
+        return selfAppraisalMapper.selectByPrimaryKey(id);
     }
 
 }
